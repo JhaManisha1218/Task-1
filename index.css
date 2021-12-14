@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(118, 250, 217);
+}
+
+.heading1 {
+  font-size: 30px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 20px;
+  position: relative;
+  top: 0px;
+  position: sticky;
+  padding: 6px 10px;
+
+  /* border: 2px solid red;*/
+}
+
+.menu {
+  display: flex;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.menu-link {
+  color: black;
+  display: block;
+  padding: 12px 12px;
+  text-decoration: none;
+  margin: 0px 8px;
+  font-size: 22px;
+}
+
+.menu-link:hover {
+  background: #fff;
+  color: red;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .heading1 {
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    font-size: 2rem;
+    /* visibility: visible; */
+  }
+  .change .heading1 {
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  .hamburger-menu {
+    width: 2.5rem;
+    height: 3rem;
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: right 0.9s;
+  }
+
+  .navbar {
+    margin: 0;
+  }
+
+  .change .hamburger-menu {
+    right: 16rem;
+  }
+
+  .line {
+    width: 100%;
+    height: 0.21rem;
+    background-color: black;
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    /* right: 0rem; */
+    right: -100rem;
+    background-color: #fff;
+    transition: right 0.8s;
+    z-index: 100;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    width: 18rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .menu-item {
+    text-align: center;
+  }
+
+  .menu-link {
+    font-family: "Baloo Da 2", serif;
+    font-size: 2.5rem;
+    color: #555;
+    position: relative;
+  }
+
+  .change .sidebar {
+    right: 0;
+  }
+
+  .change .line {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .change .line-1 {
+    transform: rotate(45deg) translate(0.31rem, 0.8rem);
+  }
+
+  .change .line-2 {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .change .line-3 {
+    transform: rotate(-45deg) translate(0.31rem, -0.8rem);
+  }
+
+  /* .hamburger-menu span {
+    position: absolute;
+    left: 5rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: #e2b646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "Baloo Da 2", serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+
+  .change .hamburger-menu:hover span {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hamburger-menu span::before {
+    content: "";
+    position: absolute;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid #e2b646;
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent;
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%);
+  } */
+}
+
+@media (min-height: 600px) {
+  .menu {
+    top: 35%;
+  }
+}
+
+.heading {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 2.5rem;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.card {
+  width: 30rem;
+  height: 23rem;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 4px 3rem;
+  transition: all 0.3s ease;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  border-radius: 0.5rem;
+}
+
+.card-img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card-img-wrapper img {
+  opacity: 0.5;
+}
+
+.card-info {
+  margin-left: 2rem;
+  position: absolute;
+  top: 0;
+  padding: 15px 15px;
+  text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.card:hover .card-info {
+  top: 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-info h2 {
+  font-family: "Baloo Da 2", serif;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+  color: #eee;
+}
+
+.card-info h3 {
+  font-family: "Mulish", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #a52a2a;
+  margin-bottom: 1rem;
+}
+
+.card-info p {
+  font-family: "Baloo Da 2", serif;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 300;
+  color: #eee;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+.card-info button {
+  width: 10rem;
+  height: 3rem;
+  background-color: #c29525;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  color: #eee;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 720px) {
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 14rem;
+    height: 20rem;
+    box-shadow: 0 1rem 4rem rgb(0 0 0 / 40%);
+    border-radius: 0.5rem;
+    position: relative;
+    margin: 30px 3rem;
+  }
+  .heading {
+    text-align: center;
+    margin-top: 5rem;
+  }
+}
